@@ -4,34 +4,13 @@ import axios from 'axios';
 export const Main = () => {
   const [exercise, setExercise] = useState('');
   const [side, setSide] = useState('');
-  const [file, setFile] = useState();
 
-const handleSubmit1 = (event1) => {
-  event1.preventDefault();
+const handleSubmit1 = (event) => {
+  event.preventDefault();
   const process = { exercise, side };
   console.log(process);
 }
 
-function handleChange(event2) {
-  setFile(event2.target.files[0])
-}
-
-function handleSubmit(event2) {
-  event2.preventDefault()
-  const url = 'Upload a video file';
-  const formData = new FormData();
-  formData.append('file', file);
-  formData.append('fileName', file.name);
-  const config = {
-    headers: {
-      'content-type': 'multipart/form-data',
-    },
-  };
-  axios.post(url, formData, config).then((response) => {
-    console.log(response.data);
-  });
-
-}
 
   return (
     <form onSubmit={handleSubmit1}>
@@ -40,7 +19,7 @@ function handleSubmit(event2) {
         <select
           className='mt-[20px]'
           value={exercise}
-          onChange={(event1) => setExercise(event1.target.value)}
+          onChange={(event) => setExercise(event.target.value)}
         >
           <option value="norma_squat">Normal Squat</option>
           <option value="wide_squat">Wide Squat</option>
@@ -53,19 +32,7 @@ function handleSubmit(event2) {
         <select
           className='mt-[20px]'
           value={side}
-          onChange={(event1) => setSide(event1.target.value)}
-        >
-          <option value="Right">Right</option>
-          <option value="Left">Left</option>
-        </select>
-      </div>
-
-      <h2 className='text-2xl text-[#00df9a] font-bold mt-[20px] text-center'>Upload File</h2>
-      <div style={{display: 'flex' , justifyContent: 'center'}}>
-        <select
-          className='mt-[20px]'
-          value={side}
-          onChange={(event1) => setSide(event1.target.value)}
+          onChange={(event) => setSide(event.target.value)}
         >
           <option value="Right">Right</option>
           <option value="Left">Left</option>
@@ -77,6 +44,7 @@ function handleSubmit(event2) {
       </div>
     </form>
   );
+
 }
 
 export default Main
