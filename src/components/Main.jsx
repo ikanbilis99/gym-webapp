@@ -1,27 +1,26 @@
-import {React, useState} from 'react';
-import axios from 'axios';
+import {React, useState, useEffect} from 'react';
 
 export const Main = () => {
   const [exercise, setExercise] = useState('');
   const [side, setSide] = useState('');
+  const [file, setFile] = useState('');
 
-const handleSubmit1 = (event) => {
-  event.preventDefault();
-  const process = { exercise, side };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const process = { exercise, side, file };
   console.log(process);
-}
-
+};
 
   return (
-    <form onSubmit={handleSubmit1}>
+    <form onSubmit={handleSubmit}>
       <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exericse</h2>
       <div style={{display: 'flex' , justifyContent: 'center'}}>
         <select
           className='mt-[20px]'
           value={exercise}
-          onChange={(event) => setExercise(event.target.value)}
+          onChange={(e) => setExercise(e.target.value)}
         >
-          <option value="norma_squat">Normal Squat</option>
+          <option value="normal_squat">Normal Squat</option>
           <option value="wide_squat">Wide Squat</option>
           <option value="narrow_squat">Narrow Squat</option>
         </select>
@@ -32,21 +31,25 @@ const handleSubmit1 = (event) => {
         <select
           className='mt-[20px]'
           value={side}
-          onChange={(event) => setSide(event.target.value)}
+          onChange={(e) => setSide(e.target.value)}
         >
           <option value="Right">Right</option>
           <option value="Left">Left</option>
         </select>
       </div>
 
-      <div style={{display: 'flex' , justifyContent: 'center'}}>
+      <h2 className='text-2xl text-[#00df9a] font-bold mt-[20px] text-center'>Upload Video</h2>
+      <div style={{display: 'flex' , justifyContent: 'center', alignItems:'center'}}>
+        <input type="file" id="myFile" name="filename" className='mt-[20px]' value={file} onChange={(e) => setFile(e.target.value)}/>
+      </div>
+
+      <div style={{display: 'flex',  justifyContent:'center'}}>
         <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Submit</button>
       </div>
     </form>
   );
 
-}
+  }
 
 export default Main
 
-//feature for user to select file from computer
