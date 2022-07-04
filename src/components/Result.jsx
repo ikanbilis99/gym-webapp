@@ -1,13 +1,21 @@
-import React from "react";
-import duck from '../assets/duck.mp4';
+import { React, useState, useEffect } from "react";
+import ReactPlayer from 'react-player';
 
 function Video() {
-    return (
+  const [videoData, setVideoData] = useState('');
+    // call the api to get the video source
+    useEffect(() => {
+      fetch("/video")
+      .then(response => response.blob())
+          .then(video => {
+              // Create a local URL of that image
+              const localUrl = URL.createObjectURL(video);
+              setVideoData(localUrl);
+          });
+    },[])
+  return (
       <div>
-        <video width="320" height="240" autoplay>
-            <source src={duck} type="video/mp4"/>
-        </video>
-        
+        <ReactPlayer url={videoData} playing="true" controls="true"/>
       </div>
     );
   }
