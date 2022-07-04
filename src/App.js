@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './routes/Home';
 import Contact from './routes/Contact';
@@ -18,5 +17,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));
