@@ -11,7 +11,7 @@ const handleSubmit = (e) => {
   fetch('url_route', {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify
+    body: JSON.stringify(process)
   }).then(() => {
     console.log('data uploaded');
   }) 
