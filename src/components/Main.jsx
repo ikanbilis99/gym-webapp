@@ -8,7 +8,13 @@ export const Main = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
   const process = { exercise, side, file };
-  console.log(process);
+  fetch('url_route', {
+    method: 'POST',
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify
+  }).then(() => {
+    console.log('data uploaded');
+  }) 
 };
 
   return (
