@@ -1,24 +1,46 @@
 import {React, useState, useEffect} from 'react';
 
 export const Main = () => {
-  const [exercise, setExercise] = useState('');
-  const [side, setSide] = useState('');
-  const [file, setFile] = useState('');
+  const [exercise, setExercise] = useState('narrow_squat');
+  const [side, setSide] = useState('Left');
+  const [file, setFile] = useState();
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  const process = { exercise, side, file };
-  fetch('url_route', {
-    method: 'POST',
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(process)
-  }).then(() => {
-    console.log('data uploaded');
-  }) 
-};
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const process = { exercise, side };
+  //   fetch('url_route', {
+  //     method: 'POST',
+  //     headers: {"Content-Type": "application/json"},
+  //     body: JSON.stringify(process)
+  //   }).then(() => {
+  //     console.log('data uploaded');
+  //   }) 
+  // };
+
+  const handleSubmit = async (e) => {
+    // const file = e.target.files[0];
+    if (file != null) {
+      const data = new FormData();
+      data.append('file_from_react', file);
+      data.append('exercise', exercise);
+      data.append('side', side);
+  
+      let response = await fetch('http://127.0.0.1:5000/url_route',
+        {
+          method: 'post',
+          body: data,
+        }
+      );
+      let res = await response.json();
+      // if (res.status !== 1){
+      //   alert('Error uploading file');
+      // }
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
+    // <form onSubmit={handleSubmit} method="POST">
+    <div>
       <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exericse</h2>
       <div style={{display: 'flex' , justifyContent: 'center'}}>
         <select
@@ -46,13 +68,13 @@ const handleSubmit = (e) => {
 
       <h2 className='text-2xl text-[#00df9a] font-bold mt-[20px] text-center'>Upload Video</h2>
       <div style={{display: 'flex' , justifyContent: 'center', alignItems:'center'}}>
-        <input type="file" id="myFile" name="filename" className='mt-[20px]' value={file} onChange={(e) => setFile(e.target.value)}/>
+        <input type="file" id="myFile" name="filename" className='mt-[20px]' onChange={(e) => setFile(e.target.files[0])}/>
       </div>
 
       <div style={{display: 'flex',  justifyContent:'center'}}>
-        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Submit</button>
+        <button onClick={handleSubmit} className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Submit</button>
       </div>
-    </form>
+    </div>
   );
 
   }
