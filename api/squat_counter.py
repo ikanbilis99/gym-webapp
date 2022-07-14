@@ -150,5 +150,5 @@ def squat_counter(video_path,side):
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-    
-squat_counter("api/squat.mp4","L")
+#test
+#squat_counter("api/squat.mp4","L")
