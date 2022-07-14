@@ -2,6 +2,7 @@ from flask import Flask, send_file, jsonify, request, session
 import json
 from io import BytesIO
 import flask_cors
+from squat_counter import *
 
 app = Flask(__name__)
 
@@ -35,4 +36,6 @@ def receive_data():
         file_content = BytesIO(file_bytes).readlines()
         with open(filename, "wb") as out_file:
             out_file.write(file_bytes)
+        #trigger squat_counter
+        squat_counter("api/squat.mp4",data["side"]
         return data
