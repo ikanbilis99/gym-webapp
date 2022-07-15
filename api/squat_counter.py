@@ -4,7 +4,7 @@ import mediapipe as mp
 import numpy as np
 import pose_module as pm
 
-def squat_counter(video_path,side):
+def squat_counter(video_path,side,unique_name):
     print("running squat_counter.py")
     cap = cv2.VideoCapture(video_path)
     workout_side = "side"
@@ -21,9 +21,10 @@ def squat_counter(video_path,side):
     # Below VideoWriter object will create
     # a frame of above defined The output 
     # is stored in 'filename.avi' file.
-    out = cv2.VideoWriter('output.mp4', 
+    output_name = unique_name + "_output.mp4"
+    out = cv2.VideoWriter(output_name, 
                          cv2.VideoWriter_fourcc(*'mp4v'),
-                         25, size)
+                         10, size)
     while True:
         ret, img = cap.read() #640 x 480
         if ret == True:
