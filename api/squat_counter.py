@@ -5,6 +5,7 @@ import numpy as np
 import pose_module as pm
 
 def squat_counter(video_path,side):
+    print("running squat_counter.py")
     cap = cv2.VideoCapture(video_path)
     workout_side = "side"
     detector = pm.poseDetector()
@@ -35,14 +36,14 @@ def squat_counter(video_path,side):
             lmList = detector.findPosition(img, False)
             # print(lmList)
             if len(lmList) != 0:
-                if side == 'L':
+                if side == 'Left':
                     left_knee = detector.findAngle(img, 23, 25, 27)
                     left_hip = detector.findAngle(img, 11, 23,25)
-                if side == 'R':
+                if side == 'Right':
                     right_knee = detector.findAngle(img, 24, 26, 28)
                     right_hip = detector.findAngle(img, 12, 24,26)           
                 #Percentage of success of squat
-                if side == 'L':
+                if side == 'Left':
                     per = np.interp(left_hip, (45, 130), (0, 100))
                     bar = np.interp(left_hip, (45, 130), (380, 50))
                     # Bar to show squat progress
@@ -89,7 +90,7 @@ def squat_counter(video_path,side):
 
 
                         
-                if side == 'R':
+                if side == 'Right':
                     per = np.interp(right_hip, (45, 130), (0, 100))
                     bar = np.interp(right_hip, (45, 130), (380, 50))
                     # Bar to show squat progress
@@ -143,7 +144,7 @@ def squat_counter(video_path,side):
                     cv2.putText(frame, feedback, (500, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
                                 (0, 255, 0), 2)
                 
-            #cv2.imshow('Squat counter', img)
+            #cv2.imshow('Squat counteRight', img)
             out.write(frame)
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
@@ -152,5 +153,5 @@ def squat_counter(video_path,side):
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-    
+#test: place deep.mp4 in api folder and run script
 #squat_counter("api/deep.mp4","L")
