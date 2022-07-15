@@ -68,7 +68,7 @@ export const Main = () => {
 
       <h2 className='text-2xl text-[#00df9a] font-bold mt-[20px] text-center'>Upload Video</h2>
       <div style={{display: 'flex' , justifyContent: 'center', alignItems:'center'}}>
-        <input type="file" id="myFile" name="filename" className='mt-[20px]' onChange={(e) => setFile(e.target.files[0])}/>
+        <input type="file" id="myFile" name="filename" className='mt-[20px] bg-[#ffffff]' onChange={(e) => setFile(e.target.files[0])}/>
       </div>
 
       <div style={{display: 'flex',  justifyContent:'center'}}>
