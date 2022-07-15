@@ -37,5 +37,5 @@ def receive_data():
         with open(filename, "wb") as out_file:
             out_file.write(file_bytes)
         #trigger squat_counter
-        squat_counter("api/squat.mp4",data["side"]
+        squat_counter(filename,data["side"])
         return data
