@@ -23,7 +23,7 @@ def squat_counter(video_path,side,unique_name):
     output_name = unique_name + "_output.mp4"
     out = cv2.VideoWriter(output_name, 
                          cv2.VideoWriter_fourcc(*'mp4v'),
-                         10, size)
+                         25, size)
     while True:
         ret, img = cap.read() #640 x 480
         if ret == True:
