@@ -25,7 +25,7 @@ export const Main = () => {
       data.append('exercise', exercise);
       data.append('side', side);
   
-      let response = await fetch('http://127.0.0.1:5000/url_route',
+      let response = await fetch('/url_route',
         {
           method: 'post',
           body: data,
