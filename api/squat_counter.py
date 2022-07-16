@@ -78,7 +78,7 @@ def squat_counter(video_path,side,unique_name):
                         cv2.putText(frame, f'{int(per)}%', (565, 430), cv2.FONT_HERSHEY_PLAIN, 2,
                                     (255, 0, 0), 2)
 
-                    #Pushup counter
+                    #Squat counter
                     cv2.rectangle(frame, (0, 380), (100, 480), (0, 255, 0), cv2.FILLED)
                     cv2.putText(frame, str(int(count)), (25, 455), cv2.FONT_HERSHEY_PLAIN, 5,
                                 (255, 0, 0), 5)
