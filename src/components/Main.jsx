@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export const Main = () => {
   const [exercise, setExercise] = useState('narrow_squat');
@@ -17,13 +18,20 @@ export const Main = () => {
   //   }) 
   // };
 
+
   const handleSubmit = async (e) => {
     // const file = e.target.files[0];
     if (file != null) {
+
+      const generatedUUID = uuidv4();
+      window.localStorage.setItem("uuid", generatedUUID);
+      console.log(generatedUUID);
+
       const data = new FormData();
       data.append('file_from_react', file);
       data.append('exercise', exercise);
       data.append('side', side);
+      data.append('uuid', generatedUUID);
   
       let response = await fetch('/url_route',
         {

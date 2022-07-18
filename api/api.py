@@ -8,10 +8,11 @@ import uuid
 app = Flask(__name__)
 
 # https://www.npmjs.com/package/react-player
-# @app.route('/video')
-# def get_video():
-#     # reading the video file output
-#     return send_file("../src/assets/duck.mp4")
+@app.route('/video/<uuid>')
+def get_video(uuid):
+    # reading the video file output
+    filepath = uuid + "_output.mp4"
+    return send_file(filepath)
 
 cors = flask_cors.CORS()
 cors.init_app(app)
@@ -26,7 +27,8 @@ def receive_data():
         # upload the form data
         exerciseData = request.form.get('exercise')
         sideData = request.form.get('side')
-        data = {"exercise": exerciseData, "side": sideData}
+        uuidData = request.form.get('uuid')
+        data = {"exercise": exerciseData, "side": sideData, "uuid": uuidData}
         with open("temp_gym_data.json", "w") as write_file:
             json.dump(data, write_file, indent=4)
         # upload the video
@@ -34,8 +36,8 @@ def receive_data():
         original_filename = videoFile.filename
 
         extension = original_filename.rsplit('.', 1)[1].lower()
-        unique_name = str(uuid.uuid1())
-        filename = unique_name + '.' + extension
+        # unique_name = str(uuid.uuid1())
+        filename = uuidData + '.' + extension
         # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # file_list = os.path.join(UPLOAD_FOLDER, 'files.json')
         # files = _get_files()
@@ -50,5 +52,5 @@ def receive_data():
         with open(filename, "wb") as out_file:
             out_file.write(file_bytes)
         #trigger squat_counter
-        squat_counter(filename,data["side"],unique_name)
+        squat_counter(filename,data["side"],uuidData)
         return data
