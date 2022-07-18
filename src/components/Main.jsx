@@ -5,7 +5,6 @@ export const Main = () => {
   const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
-  
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   const process = { exercise, side };
