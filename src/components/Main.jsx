@@ -1,5 +1,6 @@
 import {React, useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import {Link} from "react-router-dom";
 
 export const Main = () => {
   const [exercise, setExercise] = useState('narrow_squat');
@@ -80,7 +81,9 @@ export const Main = () => {
       </div>
 
       <div style={{display: 'flex',  justifyContent:'center'}}>
+      <Link to="/displayresult">
         <button onClick={handleSubmit} className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Submit</button>
+      </Link>      
       </div>
     </div>
   );

@@ -11,9 +11,9 @@ const Two = () => {
           <p className='text-[#00df9a] font-bold '>DATA ANALYTICS DASHBOARD</p>
           <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>Manage Your Workouts</h1>
           <p>
-            Review, Adjust &#38; Track your workouts with the help of Artifical Intellgience &#40;A.I.&#41;.
+            Review, Adjust &#38; Track your workouts with the help of Artificial Intelligence &#40;A.I.&#41;.
             User friendly and interactive platform to help you visualize your workouts in a deeper dimension. 
-            The righ technqiue and posture, workouts can be safer and more effective.
+            The right technique and posture, workouts can be safer and more effective.
           </p>
           <Link to="/getstarted">
             <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>
