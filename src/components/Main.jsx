@@ -1,8 +1,7 @@
 import {React, useState, useEffect} from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 export const Main = () => {
-  const [exercise, setExercise] = useState('narrow_squat');
+  const [exercise, setExercise] = useState('Below Parallel Squat');
   const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
@@ -18,20 +17,13 @@ export const Main = () => {
   //   }) 
   // };
 
-
   const handleSubmit = async (e) => {
     // const file = e.target.files[0];
     if (file != null) {
-
-      const generatedUUID = uuidv4();
-      window.localStorage.setItem("uuid", generatedUUID);
-      console.log(generatedUUID);
-
       const data = new FormData();
       data.append('file_from_react', file);
       data.append('exercise', exercise);
       data.append('side', side);
-      data.append('uuid', generatedUUID);
   
       let response = await fetch('/url_route',
         {
@@ -56,9 +48,10 @@ export const Main = () => {
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
-          <option value="normal_squat">Normal Squat</option>
-          <option value="wide_squat">Wide Squat</option>
-          <option value="narrow_squat">Narrow Squat</option>
+          <option value="A">Below Parallel Squat</option>
+          <option value="B">Deep Squat</option>
+          <option value="C">Front Squat</option>
+          <option value="D">Squat Hold</option>
         </select>
       </div>
 
