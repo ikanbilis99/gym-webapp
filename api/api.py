@@ -2,7 +2,7 @@ from flask import Flask, send_file, jsonify, request, session
 import json
 from io import BytesIO
 import flask_cors
-from squat_counter_updated import *
+from squat_counter import *
 import uuid
 
 app = Flask(__name__)
