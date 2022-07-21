@@ -21,7 +21,7 @@ function Video() {
   return (
       <div>
         <ReactPlayer url={videoData} playing={true} controls={true} autoPlay={true}/>
-        <p style={{color: 'white'}}>
+        <p style={{color: 'white', textAlign: 'center'}}>
         Please refresh the page in a while until you see the video result!
         </p> 
       </div>
