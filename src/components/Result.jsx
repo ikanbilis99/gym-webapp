@@ -20,8 +20,8 @@ function Video() {
     },[])
   return (
       <div>
-        <ReactPlayer url={videoData} playing={true} controls={true} autoPlay={true} height='100%' width='100%'/>
-        <p style={{color: 'white', textAlign: 'center'}}>
+        <ReactPlayer url={videoData} playing={true} controls={true} autoPlay={true} width="100%" style={{position:"aboslute"}}/>
+        <p style={{color: 'white', textAlign:'center'}}>
         Please refresh the page in a while until you see the video result!
         </p> 
       </div>
