@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import {Link} from "react-router-dom";
 
 export const Main = () => {
-  const [exercise, setExercise] = useState('Below Parallel Squat');
-  const [side, setSide] = useState('Left');
+  const [exercise, setExercise] = useState('normal_squat');
+  const [side, setSide] = useState('Right');
   const [file, setFile] = useState();
 
   // const handleSubmit = (e) => {
