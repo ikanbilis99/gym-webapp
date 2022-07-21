@@ -52,5 +52,5 @@ def receive_data():
         with open(filename, "wb") as out_file:
             out_file.write(file_bytes)
         #trigger squat_counter
-        squat_counter(filename,data["side"],uuidData)
+        squat_counter(filename,data["exercise"],data["side"],uuidData)
         return data
