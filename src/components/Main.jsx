@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {Link} from "react-router-dom";
 
 export const Main = () => {
-  const [exercise, setExercise] = useState('normal_squat');
+  const [exercise, setExercise] = useState('Below Parallel Squat');
   const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
@@ -57,9 +57,10 @@ export const Main = () => {
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
-          <option value="normal_squat">Normal Squat</option>
-          <option value="wide_squat">Wide Squat</option>
-          <option value="narrow_squat">Narrow Squat</option>
+          <option value="A">Below Parallel Squat</option>
+          <option value="B">Deep Squat</option>
+          <option value="C">Front Squat</option>
+          <option value="D">Squat Hold</option>
         </select>
       </div>
 
