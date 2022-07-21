@@ -57,8 +57,8 @@ export const Main = () => {
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
-          <option value="A">Below Parallel Squat</option>
-          <option value="B">Deep Squat</option>
+          <option value="A">Normal Squat</option>
+          <option value="B">Below Parallel Squat</option>
           <option value="C">Front Squat</option>
           <option value="D">Squat Hold</option>
         </select>
