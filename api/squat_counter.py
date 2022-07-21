@@ -5,7 +5,7 @@ import numpy as np
 import pose_module as pm
 import Squat as sq
 
-def squat_counter(video_path,side,unique_name):
+def squat_counter(video_path,exercise,side,unique_name):
     print("running squat_counter.py")
     cap = cv2.VideoCapture(video_path)
     detector = pm.poseDetector()
