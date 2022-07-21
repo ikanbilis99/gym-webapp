@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 export const Main = () => {
   const [exercise, setExercise] = useState('normal_squat');
-  const [side, setSide] = useState('Right');
+  const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
   // const handleSubmit = (e) => {
@@ -50,7 +50,7 @@ export const Main = () => {
   return (
     // <form onSubmit={handleSubmit} method="POST">
     <div>
-      <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exericse</h2>
+      <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exercise</h2>
       <div style={{display: 'flex' , justifyContent: 'center'}}>
         <select
           className='mt-[20px]'
@@ -70,8 +70,8 @@ export const Main = () => {
           value={side}
           onChange={(e) => setSide(e.target.value)}
         >
-          <option value="Right">Right</option>
           <option value="Left">Left</option>
+          <option value="Right">Right</option>
         </select>
       </div>
 
