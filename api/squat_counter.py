@@ -24,8 +24,7 @@ def squat_counter(video_path,exercise,side,unique_name):
 
     # min depth based on user selection of squat type
     min_depth = sq.sq_type[exercise][0]
-    if exercise == 'A' or exercise == 'D':
-        max_depth = sq.sq_type[exercise][1]
+    max_depth = sq.sq_type[exercise][1]
     
     # Below VideoWriter object will create
     # a frame of above defined The output 
@@ -55,9 +54,8 @@ def squat_counter(video_path,exercise,side,unique_name):
                 # Bar to show squat progress
                 bar = np.interp(hip, (min_depth, 130), (380, 50))
 
-                if exercise == 'A' or exercise == 'D':
-                    reverse_per = np.interp(hip, (0, max_depth), (0, 100))
-                    reverse_bar = np.interp(hip, (0, max_depth), (500, 380))
+                reverse_per = np.interp(hip, (0, max_depth), (0, 100))
+                reverse_bar = np.interp(hip, (0, max_depth), (500, 380))
 
                 # Bar to show squat progress
                 #Check to ensure right form before starting the program
@@ -67,15 +65,14 @@ def squat_counter(video_path,exercise,side,unique_name):
                 #Check for full range of motion for the squat
                 if form == 1:
                     if per == 0:
-                        if exercise == 'A' or exercise == 'D':
-                            if hip < max_depth:
-                                feedback = "Too low!"
+                        
+                        if hip < max_depth:
+                            feedback = "Too low!"
                 
-                            if max_depth < hip < min_depth:
-                                feedback = "Just nice"
-
-                        else:
+                        if max_depth < hip < min_depth:
                             feedback = "Just nice"
+
+                        
                         
                         if direction == 0:
                             count += 0.5
@@ -99,11 +96,11 @@ def squat_counter(video_path,exercise,side,unique_name):
                         cv2.putText(frame, f'{int(per)}%', (630, 430), cv2.FONT_HERSHEY_PLAIN, 2,
                                     (0, 235, 0), 2)
 
-                        if exercise == 'A' or exercise == 'D':
-                            cv2.rectangle(frame, (600, 380), (620, 500), (0, 0, 255), 3)
-                            cv2.rectangle(frame, (600, int(reverse_bar)), (620, 500), (0, 0, 255), cv2.FILLED)
-                            cv2.rectangle(frame, (630, 450), (750, 500), (0, 0, 0), cv2.FILLED)
-                            cv2.putText(frame, f'{int(100-reverse_per)}%', (630, 480), cv2.FONT_HERSHEY_PLAIN, 2,
+                        
+                        cv2.rectangle(frame, (600, 380), (620, 500), (0, 0, 255), 3)
+                        cv2.rectangle(frame, (600, int(reverse_bar)), (620, 500), (0, 0, 255), cv2.FILLED)
+                        cv2.rectangle(frame, (630, 450), (750, 500), (0, 0, 0), cv2.FILLED)
+                        cv2.putText(frame, f'{int(100-reverse_per)}%', (630, 480), cv2.FONT_HERSHEY_PLAIN, 2,
                                         (0, 0, 255), 2)
 
                     #Squat counter

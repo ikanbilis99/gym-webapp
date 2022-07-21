@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 export const Main = () => {
   const [exercise, setExercise] = useState('A');
-  const [side, setSide] = useState('Right');
+  const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
   // const handleSubmit = (e) => {
