@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import {Link} from "react-router-dom";
 
 export const Main = () => {
-  const [exercise, setExercise] = useState('normal_squat');
-  const [side, setSide] = useState('Right');
+  const [exercise, setExercise] = useState('A');
+  const [side, setSide] = useState('Left');
   const [file, setFile] = useState();
 
   // const handleSubmit = (e) => {
@@ -50,16 +50,17 @@ export const Main = () => {
   return (
     // <form onSubmit={handleSubmit} method="POST">
     <div>
-      <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exericse</h2>
+      <h2 className='text-2xl text-[#00df9a] font-bold mt-[60px] text-center'>Choose Exercise</h2>
       <div style={{display: 'flex' , justifyContent: 'center'}}>
         <select
           className='mt-[20px]'
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
         >
-          <option value="normal_squat">Normal Squat</option>
-          <option value="wide_squat">Wide Squat</option>
-          <option value="narrow_squat">Narrow Squat</option>
+          <option value="A">Normal Squat</option>
+          <option value="B">Below Parallel Squat</option>
+          <option value="C">Front Squat</option>
+          <option value="D">Squat Hold</option>
         </select>
       </div>
 
@@ -70,8 +71,8 @@ export const Main = () => {
           value={side}
           onChange={(e) => setSide(e.target.value)}
         >
-          <option value="Right">Right</option>
           <option value="Left">Left</option>
+          <option value="Right">Right</option>
         </select>
       </div>
 
