@@ -6,12 +6,12 @@ function Cards() {
   return (
     <div className='Card'>
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
-        <img src={andrew} alt='/' className='w-[250px] mx-auto mt-[60px] '/>
+        <img src={andrew} alt='/' className='w-[250px] mx-auto mt-[60px]' style={{borderRadius:'50%'}}/>
           <div className='flex flex-col justify-center mt-[60px] '>
             <h1 className='text-3xl font-bold text-[#00df9a]'>Andrew - Founder</h1>
             <p className ='text-gray-400 font-medium' >Singapore Management University - Information Systems Major</p>
           </div>
-        <img src={zihao} alt='/' className='w-[250px] mx-auto mt-[40px] '/>
+        <img src={zihao} alt='/' className='w-[250px] mx-auto mt-[40px]'style={{borderRadius:'50%'}}/>
           <div className='flex flex-col justify-center mt-[40px] '>
             <h1 className='text-3xl font-bold text-[#00df9a]'>Zi Hao - Co-Founder</h1>
             <p className ='text-gray-400 font-medium' >Singapore Management University - Economics Major</p>
