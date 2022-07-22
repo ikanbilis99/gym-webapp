@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import ReactPlayer from 'react-player';
+import {Link} from "react-router-dom";
 
 function Video() {
 
@@ -19,12 +20,20 @@ function Video() {
           });
     },[])
   return (
+    <div>
       <div>
-        <ReactPlayer url={videoData} playing={true} controls={true} autoPlay={true} width='100%'/>
-        <p style={{color: 'white', textAlign: 'center'}}>
-        Please refresh the page in a while until you see the video result!
-        </p> 
+          <ReactPlayer url={videoData} playing={true} controls={true} autoPlay={true} className="mt-[30px]" width='100%'/>
+          <p className="mt-[30px] mb-[30px]" style={{color: 'white', textAlign: 'center'}}>
+           Please refresh the page in a while until you see the video result!
+           </p> 
+        <div style={{display: 'flex',  justifyContent:'center'}}>
+          <Link to="/getstarted">
+            <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Back</button>
+          </Link>  
+        </div>
       </div>
+    </div>
+
     );
   }
   
