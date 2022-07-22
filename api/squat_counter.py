@@ -6,7 +6,6 @@ import pose_module as pm
 import Squat as sq
 
 def squat_counter(video_path,exercise,side,unique_name):
-    print("running squat_counter.py")
     cap = cv2.VideoCapture(video_path)
     detector = pm.poseDetector()
     count = 0
@@ -33,6 +32,7 @@ def squat_counter(video_path,exercise,side,unique_name):
     out = cv2.VideoWriter(output_name, 
                          cv2.VideoWriter_fourcc(*'h264'),
                          25, size)
+
     while True:
         ret, img = cap.read() #640 x 480
         if ret == True:
@@ -115,7 +115,7 @@ def squat_counter(video_path,exercise,side,unique_name):
      
        
                 
-            cv2.imshow('Squat counteRight', img)
+            #cv2.imshow('Squat counteRight', img)
             out.write(frame)
             #if cv2.waitKey(10) & 0xFF == ord('q'):
                 #break
