@@ -71,8 +71,6 @@ def squat_counter(video_path,exercise,side,unique_name):
                 
                         if max_depth < hip < min_depth:
                             feedback = "Just nice"
-
-                        
                         
                         if direction == 0:
                             count += 0.5
@@ -112,10 +110,7 @@ def squat_counter(video_path,exercise,side,unique_name):
                     cv2.rectangle(frame, (520, 0), (750, 40), (0, 0, 0), cv2.FILLED)
                     cv2.putText(frame, feedback, (520, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
                                 (0, 255, 0), 2)
-     
-       
                 
-            #cv2.imshow('Squat counteRight', img)
             out.write(frame)
             #if cv2.waitKey(10) & 0xFF == ord('q'):
                 #break
