@@ -1,4 +1,4 @@
-# gym-webapp
+# dependencies
 
 pip install npm, react-player, react-dom-router, react-icons
 
