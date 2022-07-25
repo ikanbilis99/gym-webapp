@@ -13,3 +13,5 @@ always check that node modules are in directory, if not found, use pip install n
 when installing react dependencies, if installing packages issues persist: npm i packagename –force
 
 if npm not found but node modules exisits: source ~/.nvm/nvm.sh
+
+dont's mix yarn install and pip install 
