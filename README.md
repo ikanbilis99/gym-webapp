@@ -2,7 +2,7 @@
  
 base python 3.9.7, pip install opencv, mediapipe, flask, flask cors
 
-pip install npm, need react-player, react-dom-router, react-icons
+pip install npm, react-player, react-dom-router, react-icons
 
 Download tailwind: https://tailwindcss.com/docs/installation & Install es7 and tailwind extension on vscode
 
