@@ -14,4 +14,4 @@ when installing react dependencies, if installing packages issues persist: npm i
 
 if npm not found but node modules exisits: source ~/.nvm/nvm.sh
 
-dont's mix yarn install and pip install 
+don't mix yarn install and pip install 
