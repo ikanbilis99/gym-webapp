@@ -12,7 +12,7 @@ function Cards() {
 
         <img src={zihao} alt='/' className='w-[250px] h-[250px] mx-auto mt-[30px]'style={{borderRadius:'50%'}}/>
           <div className='flex flex-col justify-center mt-[60px] '>
-            <h1 className='text-3xl font-bold text-[#00df9a]'>Zi Hao - Likes to piece things together</h1>
+            <h1 className='text-3xl font-bold text-[#00df9a]'>Zi Hao - Likes to build</h1>
             <p className ='text-gray-400 font-medium' >Singapore Management University - Economics</p>
           </div>
 
@@ -30,7 +30,7 @@ function Cards() {
 
         <img src={mush} alt='/' className='w-[250px] h-[250px] mx-auto mt-[60px] mb-[30px]'style={{borderRadius:'50%'}}/>
           <div className='flex flex-col justify-center mt-[60px] '>
-            <h1 className='text-3xl font-bold text-[#00df9a]'>Mush - Understands everything insanely quick</h1>
+            <h1 className='text-3xl font-bold text-[#00df9a]'>Mush - Insanely quick understanding</h1>
             <p className ='text-gray-400 font-medium' >Singapore Management University - Computing and Technology</p>
           </div>
 
