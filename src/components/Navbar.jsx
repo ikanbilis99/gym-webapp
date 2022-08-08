@@ -23,7 +23,7 @@ const Navbar = () => {
             </li>
 
             <li className='p-4'>
-                <Link to="/contact">Contact</Link>
+                <Link to="/report">Report</Link>
             </li>
 
             <li className='p-4 font-bold text-[#00df9a]'>
@@ -46,7 +46,7 @@ const Navbar = () => {
                     </li>
 {/* change contact to commmunity card*/}
                     <li className='p-4 border-b border-gray-600'>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/report">Report</Link>
                     </li>       
                     <li className='p-4 font-bold text-[#00df9a]'>
                         <Link to="/getstarted">Start</Link>

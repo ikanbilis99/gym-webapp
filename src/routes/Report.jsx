@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Cards from '../components/Cards';
+import ReportCard from '../components/ReportCard';
 
-const Contact = () => {
+const Report = () => {
   return (
     <div>
       <Navbar />
-      <Cards />
+      <ReportCard />
     </div>
   );
 };
 
-export default Contact
+export default Report
