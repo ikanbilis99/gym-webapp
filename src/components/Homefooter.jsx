@@ -8,7 +8,7 @@ const Three = () => {
           <div>
             <h1 className='w-full text-3xl font-bold text-[#00df9a]'>RAT.</h1> 
             <div className='flex justify-between md:w-[75%] my-6'>
-                <a href='https://github.com/andrew-nks/Pose-Detection'>
+                <a href='https://github.com/ikanbilis99/gym-webapp'>
                     <FaGithubSquare size={30} />
                 </a>
             </div>
@@ -23,7 +23,7 @@ const Three = () => {
                         </a>
                     </li>
                     <li className='py-2 text-sm'>
-                        <a href='https://github.com/andrew-nks/Pose-Detection'>
+                        <a href='https://github.com/ikanbilis99/gym-webapp'>
                             Guide
                         </a>
                     </li>

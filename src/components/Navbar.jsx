@@ -17,7 +17,7 @@ const Navbar = () => {
             <li className='p-4'>
                 <Link to="/">Home</Link>
             </li>
-
+{/* change technology to score card*/}
             <li className='p-4'>
                 <Link to="/technology">Technology</Link>
             </li>
@@ -40,9 +40,11 @@ const Navbar = () => {
                     <li className='p-4 border-b border-gray-600'>
                         <Link to ="/">Home</Link>
                     </li>
+{/* change technology to score card*/}
                     <li className='p-4 border-b border-gray-600'>
                         <Link to="/technology">Technology</Link>
                     </li>
+{/* change contact to commmunity card*/}
                     <li className='p-4 border-b border-gray-600'>
                         <Link to="/contact">Contact</Link>
                     </li>       
