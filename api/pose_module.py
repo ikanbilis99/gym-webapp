@@ -62,7 +62,7 @@ class poseDetector() :
                 angle = 360 - angle
         elif angle > 180:
             angle = 360 - angle
-        # print(angle)
+        print(angle)
         
         #Draw
         if draw:
@@ -85,12 +85,13 @@ def main():
     detector = poseDetector()
     cap = cv2.VideoCapture(0)
     #lmList = detector.findPosition(img)
-    #print(lmList)
     while cap.isOpened():
         ret, img = cap.read() #ret is just the return variable, not much in there that we will use. 
         if ret:    
             img = detector.findPose(img)
             cv2.imshow('Pose Detection', img)
+            #print(lmList)
+
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
             
