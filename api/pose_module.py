@@ -84,6 +84,8 @@ class poseDetector() :
 def main():
     detector = poseDetector()
     cap = cv2.VideoCapture(0)
+    lmList = detector.findPosition(img)
+    print(lmList)
     while cap.isOpened():
         ret, img = cap.read() #ret is just the return variable, not much in there that we will use. 
         if ret:    
