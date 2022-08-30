@@ -62,7 +62,6 @@ class poseDetector() :
                 angle = 360 - angle
         elif angle > 180:
             angle = 360 - angle
-        print(angle)
         
         #Draw
         if draw:

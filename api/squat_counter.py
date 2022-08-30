@@ -43,7 +43,6 @@ def squat_counter(video_path,exercise,side,unique_name):
             frame = img
             img = detector.findPose(frame, False)
             lmList = detector.findPosition(img, False)
-            # print(lmList)
             if len(lmList) != 0:
                 hip = detector.findAngle(img, hip_angles[0], hip_angles[1], hip_angles[2] )
                 knee = detector.findAngle(img, knee_angles[0], knee_angles[1], knee_angles[2] )
@@ -110,7 +109,7 @@ def squat_counter(video_path,exercise,side,unique_name):
                     cv2.rectangle(frame, (520, 0), (750, 40), (0, 0, 0), cv2.FILLED)
                     cv2.putText(frame, feedback, (520, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
                                 (0, 255, 0), 2)
-                
+            print(lmList)
             out.write(frame)
             #if cv2.waitKey(10) & 0xFF == ord('q'):
                 #break

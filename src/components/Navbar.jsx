@@ -19,7 +19,7 @@ const Navbar = () => {
             </li>
 {/* change technology to score card*/}
             <li className='p-4'>
-                <Link to="/technology">Technology</Link>
+                <Link to="/demo">Demo</Link>
             </li>
 
             <li className='p-4'>
@@ -42,7 +42,7 @@ const Navbar = () => {
                     </li>
 {/* change technology to score card*/}
                     <li className='p-4 border-b border-gray-600'>
-                        <Link to="/technology">Technology</Link>
+                        <Link to="/demo">Demo</Link>
                     </li>
 {/* change contact to commmunity card*/}
                     <li className='p-4 border-b border-gray-600'>

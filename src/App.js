@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './routes/Home';
 import Report from './routes/Report';
 import Getstarted from './routes/Getstarted';
-import Technology from './routes/Technology';
+import Demo from './routes/Demo';
 import Displayresult from './routes/Displayresult';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
         <Route path='/' element={<Home/>} />
         <Route path='report' element={<Report/>} />
         <Route path='getstarted' element={<Getstarted/>} />
-        <Route path='technology' element={<Technology/>} />
+        <Route path='demo' element={<Demo/>} />
         <Route path='displayresult' element={<Displayresult/>} />
       </Routes>
     </BrowserRouter>
