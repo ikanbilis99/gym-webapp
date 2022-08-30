@@ -26,7 +26,7 @@ const DemoPage = () => {
 
             <div>
                 <h1 className='text-white md:text-7xl sm:text-6xl text-4xl font-bold text-left'>
-                    Track and Analyze
+                    Analyze &#38; Track
                 </h1>
             </div>
         </div>
