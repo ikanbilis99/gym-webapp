@@ -2,7 +2,7 @@ import React from 'react'
 import laptop from '../assets/laptop.jpeg';
 import sampleVideo from '../assets/demo_video.mp4'
 
-const DemoVideo = () => {
+const DemoPage = () => {
   return (
     <div>
         <div className='grid md:grid-cols-2 justify-center ml-10'>
@@ -19,7 +19,7 @@ const DemoVideo = () => {
             </div>
         </div>
 
-        <div className='grid md:grid-cols-2 justify-center ml-10 mt-10'>
+        <div className='grid md:grid-cols-2 justify-center ml-10 mt-10 mb-10'>
             <div className='flex flex-col justify-center'>
                 <img src={laptop} width={480} height={272} alt='/' />
             </div>
@@ -35,4 +35,4 @@ const DemoVideo = () => {
   )
 }
 
-export default DemoVideo
+export default DemoPage

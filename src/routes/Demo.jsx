@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
-import DemoVideo from '../components/DemoVideo';
+import Demoitems from '../components/Demoitems';
 
 const Demo = () => {
   return (
     <div>
       <Navbar />
-      <DemoVideo />
+      <Demoitems />
     </div>
   )
 }
