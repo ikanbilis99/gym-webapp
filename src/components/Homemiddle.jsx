@@ -13,7 +13,7 @@ const Two = () => {
           <p>
             Review, Adjust &#38; Track your workouts with the help of Artificial Intelligence &#40;A.I.&#41;.
             User friendly and interactive platform to help you visualize your workouts in a deeper dimension. 
-            The right technique and posture, workouts can be safer and more effective.
+            With the right technique and posture, workouts can be safer and more effective.
           </p>
           <Link to="/getstarted">
             <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>

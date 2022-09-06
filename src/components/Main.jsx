@@ -83,7 +83,7 @@ export const Main = () => {
 
       <div style={{display: 'flex',  justifyContent:'center'}}>
       <Link to="/displayresult">
-        <button onClick={handleSubmit} className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Submit</button>
+        <button onClick={handleSubmit} className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black mt-[20px]'>Go</button>
       </Link>      
       </div>
     </div>
