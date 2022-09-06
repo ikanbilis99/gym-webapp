@@ -46,7 +46,7 @@ class poseDetector() :
                 if draw:
                     cv2.circle(img, (cx, cy), 5, (255,0,0), cv2.FILLED)
         return self.lmList
-        
+
     def findAngle(self, img, p1, p2, p3, draw=True):   
         #Get the landmarks
         x1, y1 = self.lmList[p1][1:]
@@ -62,7 +62,7 @@ class poseDetector() :
                 angle = 360 - angle
         elif angle > 180:
             angle = 360 - angle
-        # print(angle)
+                    
         
         #Draw
         if draw:
@@ -79,7 +79,10 @@ class poseDetector() :
             
             cv2.putText(img, str(int(angle)), (x2-50, y2+50), 
                         cv2.FONT_HERSHEY_PLAIN, 2, (0,0,255), 2)
+        
         return angle
+
+    
         
 def main():
     detector = poseDetector()
@@ -88,6 +91,8 @@ def main():
         ret, img = cap.read() #ret is just the return variable, not much in there that we will use. 
         if ret:    
             img = detector.findPose(img)
+            lmlist = detector.findPosition(img)
+                                    
             cv2.imshow('Pose Detection', img)
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
