@@ -92,8 +92,7 @@ def main():
         ret, img = cap.read() #ret is just the return variable, not much in there that we will use. 
         if ret:    
             img = detector.findPose(img)
-            lmlist = detector.findPosition(img)
-                                    
+            lmlist = detector.findPosition(img)             
             cv2.imshow('Pose Detection', img)
             #print(lmList)
 

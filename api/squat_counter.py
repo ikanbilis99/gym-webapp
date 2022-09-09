@@ -4,7 +4,6 @@ import mediapipe as mp
 import numpy as np
 import pose_module as pm
 import Squat as sq
-import matplotlib.pyplot as plt
 
 def squat_counter(video_path,exercise,side,unique_name):
     cap = cv2.VideoCapture(video_path)
@@ -23,7 +22,7 @@ def squat_counter(video_path,exercise,side,unique_name):
     
     # hip & knee angles based on user selection of side
     hip_angles = sq.angle_ref[side]['hip']
-    # knee_angles = sq.angle_ref[side]['knee']
+    knee_angles = sq.angle_ref[side]['knee']
 
     # min depth based on user selection of squat type
     min_depth = sq.sq_type[exercise][0]
@@ -50,7 +49,7 @@ def squat_counter(video_path,exercise,side,unique_name):
             
             if len(lmList) != 0:
                 hip = detector.findAngle(img, hip_angles[0], hip_angles[1], hip_angles[2] )
-                # knee = detector.findAngle(img, knee_angles[0], knee_angles[1], knee_angles[2] )
+                knee = detector.findAngle(img, knee_angles[0], knee_angles[1], knee_angles[2] )
 
                 angles.append(hip)
 
@@ -65,7 +64,7 @@ def squat_counter(video_path,exercise,side,unique_name):
 
                 # Bar to show squat progress
                 #Check to ensure right form before starting the program
-                if hip > 130 :     # and knee > 160
+                if hip > 130 and knee > 160:
                     form = 1   
 
                 #Check for full range of motion for the squat
@@ -83,7 +82,7 @@ def squat_counter(video_path,exercise,side,unique_name):
                             direction = 1
 
                     if per == 100:
-                        if hip > 120 :         # and knee > 140
+                        if hip > 120 and knee > 140:
                             feedback = "Down"
                         if direction == 1:
                             count += 0.5
@@ -126,15 +125,6 @@ def squat_counter(video_path,exercise,side,unique_name):
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-
-    index = [i for i in range(len(angles))]
-    angle_list = [round(i) for i in angles]
-
-    plt.plot(index, angle_list)
-    plt.title('Rate of squat')
-    plt.xlabel('Interval')
-    plt.ylabel('Angle')
-    plt.show()
     
 #test: place deep.mp4 in api folder and run script
 #squat_counter("api/deep.mp4","L")
